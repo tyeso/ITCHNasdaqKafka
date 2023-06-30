@@ -1,0 +1,11 @@
+[settings]
+os=Linux
+arch=x86_64
+build_type=Release
+compiler=clang
+compiler.version=12
+compiler.libcxx=libstdc++
+
+[env]
+CC=/usr/bin/clang-12
+CXX=/usr/bin/clang++-12

@@ -1,0 +1,29 @@
+set(LIBRARY_${DataTypeUpperCase}_NAME ${Namespace} CACHE INTERNAL "")
+
+set(LIBRARY_${DataTypeUpperCase}_SOURCES
+    ${DataType}Processor.cpp
+)
+
+set(LIBRARY_${DataTypeUpperCase}_HEADERS
+    ${DataType}Processor.h
+    ${DataType}Enum.h
+    ${DataType}Message.h
+    ${DataType}Parser.h
+)
+
+add_library(<%text>${</%text>LIBRARY_${DataTypeUpperCase}_NAME<%text>}</%text>
+    <%text>${</%text>LIBRARY_${DataTypeUpperCase}_SOURCES<%text>}</%text>
+    <%text>${</%text>LIBRARY_${DataTypeUpperCase}_HEADERS<%text>}</%text>)
+
+target_link_libraries(<%text>${</%text>LIBRARY_${DataTypeUpperCase}_NAME<%text>}</%text>
+    <%text>${</%text>LIBRARY_FORMAT_NAME<%text>}</%text>
+    <%text>${</%text>LIBRARY_NAME<%text>}</%text>
+    <%text>${</%text>LIBRARY_ENDIAN_NAME<%text>}</%text>
+    readerwriterqueue
+    concurrentqueue
+)
+
+target_include_directories(<%text>${</%text>LIBRARY_${DataTypeUpperCase}_NAME<%text>}</%text> PUBLIC
+    "./"
+    "<%text>${</%text>CMAKE_BINARY_DIR<%text>}</%text>/configured_files/include"
+)

@@ -1,0 +1,23 @@
+## sample messages
+sample*.txt
+sample*.npy
+
+## security config
+client-authentication-config.json
+
+## logs
+*.log
+
+## build
+build/*
+ServerProgram/build/*
+
+## generated templates
+template/*Generated/
+
+## pycache
+__pycache__/
+
+## misc
+ncdssdk.egg-info
+docs/**

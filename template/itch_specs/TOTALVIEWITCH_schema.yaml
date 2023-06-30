@@ -1,0 +1,573 @@
+DataTypeUpperCase: ITCHKAFKA
+DataType: ItchKafka
+Lang: cpp
+Includes:
+- cstdint
+- cstdio
+- string
+- vector
+- iostream
+- cassert
+- iomanip
+- map
+- regex
+- algorithm
+- misc.h
+- format.h
+Namespace: itchkafka
+Enums: {}
+PublicVarsCommon: {}
+Classes:
+- Name: SeqAddAttributedOrderMessage
+  StaticVars:
+    message_type:
+      dtype: char[29]
+      value: '"SeqAddAttributedOrderMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    orderId: uint64_t
+    side: char
+    quantity: uint32_t
+    symbol: std::string
+    price: uint32_t
+    mpid: std::string
+- Name: SeqAddOrderMessage
+  StaticVars:
+    message_type:
+      dtype: char[19]
+      value: '"SeqAddOrderMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    orderId: uint64_t
+    side: char
+    quantity: uint32_t
+    symbol: std::string
+    price: uint32_t
+- Name: SeqBrokenTradeMessage
+  StaticVars:
+    message_type:
+      dtype: char[22]
+      value: '"SeqBrokenTradeMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    matchId: uint64_t
+- Name: SeqCrossTradeMessage
+  StaticVars:
+    message_type:
+      dtype: char[21]
+      value: '"SeqCrossTradeMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    quantity: uint64_t
+    symbol: std::string
+    price: uint32_t
+    matchId: uint64_t
+    crossType: std::string
+- Name: SeqFirmPermissionsMessage
+  StaticVars:
+    message_type:
+      dtype: char[26]
+      value: '"SeqFirmPermissionsMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    mpid: std::string
+    symbol: std::string
+    pmm: char
+    mmm: char
+    mps: char
+- Name: SeqIpoQuotingPeriodMessage
+  StaticVars:
+    message_type:
+      dtype: char[27]
+      value: '"SeqIpoQuotingPeriodMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    symbol: std::string
+    quoteReleaseTime: uint32_t
+    quoteReleaseQuant: char
+    ipoPrice: uint32_t
+- Name: SeqLULDReopenMessage
+  StaticVars:
+    message_type:
+      dtype: char[21]
+      value: '"SeqLULDReopenMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    symbol: std::string
+    refPrice: uint32_t
+    upperPrice: uint32_t
+    lowerPrice: uint32_t
+    extensions: uint32_t
+- Name: SeqMarketCenterActionMessage
+  StaticVars:
+    message_type:
+      dtype: char[29]
+      value: '"SeqMarketCenterActionMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    symbol: std::string
+    marketCenter: char
+    action: char
+- Name: SeqMwcbLevelsMessage
+  StaticVars:
+    message_type:
+      dtype: char[21]
+      value: '"SeqMwcbLevelsMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    level1: uint64_t
+    level2: uint64_t
+    level3: uint64_t
+- Name: SeqMwcbStatusMessage
+  StaticVars:
+    message_type:
+      dtype: char[21]
+      value: '"SeqMwcbStatusMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    breachedLevel: char
+- Name: SeqNOIIMessage
+  StaticVars:
+    message_type:
+      dtype: char[15]
+      value: '"SeqNOIIMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    quantity: uint64_t
+    imbalance: uint64_t
+    imbalanceDir: std::string
+    symbol: std::string
+    farPrice: uint32_t
+    nearPrice: uint32_t
+    refPrice: uint32_t
+    crossType: std::string
+    priceVarianceInd: char
+- Name: SeqOrderCancelMessage
+  StaticVars:
+    message_type:
+      dtype: char[22]
+      value: '"SeqOrderCancelMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    orderId: uint64_t
+    quantity: uint32_t
+- Name: SeqOrderDeleteMessage
+  StaticVars:
+    message_type:
+      dtype: char[22]
+      value: '"SeqOrderDeleteMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    orderId: uint64_t
+- Name: SeqOrderExecutedMessage
+  StaticVars:
+    message_type:
+      dtype: char[24]
+      value: '"SeqOrderExecutedMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    orderId: uint64_t
+    quantity: uint32_t
+    matchId: uint64_t
+- Name: SeqOrderExecutedWithPriceMessage
+  StaticVars:
+    message_type:
+      dtype: char[33]
+      value: '"SeqOrderExecutedWithPriceMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    orderId: uint64_t
+    quantity: uint32_t
+    matchId: uint64_t
+    printable: char
+    price: uint32_t
+- Name: SeqRegSHOStateMessage
+  StaticVars:
+    message_type:
+      dtype: char[22]
+      value: '"SeqRegSHOStateMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    symbol: std::string
+    state: std::string
+- Name: SeqReplaceOrderMessage
+  StaticVars:
+    message_type:
+      dtype: char[23]
+      value: '"SeqReplaceOrderMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    orderId: uint64_t
+    newOrderId: uint64_t
+    quantity: uint32_t
+    price: uint32_t
+- Name: SeqRetailInterestMessage
+  StaticVars:
+    message_type:
+      dtype: char[25]
+      value: '"SeqRetailInterestMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    symbol: std::string
+    interest: char
+- Name: SeqSymbolDirectoryMessage
+  StaticVars:
+    message_type:
+      dtype: char[26]
+      value: '"SeqSymbolDirectoryMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    symbol: std::string
+    marketCategory: char
+    fsi: std::string
+    roundLotSize: uint32_t
+    roundLotOnly: std::string
+    issueClassification: std::string
+    issueSubtype: std::string
+    authenticity: std::string
+    shortSaleThreshold: std::string
+    ipoFlag: std::string
+    luldPriceTier: std::string
+    etpFlag: std::string
+    etpLeverageFactor: uint32_t
+    inverse: std::string
+- Name: SeqSystemEventMessage
+  StaticVars:
+    message_type:
+      dtype: char[22]
+      value: '"SeqSystemEventMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    event: char
+- Name: SeqTradeMessage
+  StaticVars:
+    message_type:
+      dtype: char[16]
+      value: '"SeqTradeMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    orderId: uint64_t
+    side: char
+    quantity: uint32_t
+    symbol: std::string
+    price: uint32_t
+    matchId: uint64_t
+- Name: SeqTradingActionMessage
+  StaticVars:
+    message_type:
+      dtype: char[24]
+      value: '"SeqTradingActionMessage"'
+    message_detail:
+      dtype: char[7]
+      value: '"record"'
+    version:
+      dtype: int
+      value: 1
+    namespace:
+      dtype: char[71]
+      value: '"com.nasdaq.equities.island.applications.datafeed.itch.itch50.messaging"'
+  PrivateVars: {}
+  PublicVars:
+    SoupPartition: uint32_t
+    SoupSequence: uint64_t
+    msgType: char
+    symbolLocate: uint32_t
+    uniqueTimestamp: uint64_t
+    symbol: std::string
+    tradingState: char
+    reserved: std::string
+    reason: std::string

@@ -1,0 +1,15 @@
+[requires]
+cmake/3.24.0
+catch2/2.13.8
+cxxopts/3.0.0
+fmt/8.1.1
+spdlog/1.10.0
+eigen/3.4.0
+zlib/1.2.12
+boost/1.80.0
+zeromq/4.3.4
+nlohmann_json/3.11.2
+
+[generators]
+cmake
+CMakeDeps

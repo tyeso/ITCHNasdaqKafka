@@ -1,0 +1,44 @@
+#pragma once
+#ifndef CONFIG_HPP_IN_
+#define CONFIG_HPP_IN_
+
+#include <cstdint>
+#include <string_view>
+
+static constexpr std::string_view project_name = "@PROJECT_NAME@";
+static constexpr std::string_view project_version = "@PROJECT_VERSION@";
+
+// clang-format off
+static constexpr std::int32_t project_version_major{@PROJECT_VERSION_MAJOR@};
+static constexpr std::int32_t project_version_minor{@PROJECT_VERSION_MINOR@};
+static constexpr std::int32_t project_version_patch{@PROJECT_VERSION_PATCH@};
+// clang-format on
+
+static constexpr std::string_view CMAKE_BUILD_TYPE = "@CMAKE_BUILD_TYPE@";
+static constexpr std::string_view coverage = "@ENABLE_COVERAGE@";
+static constexpr std::string_view _CMAKE_C_COMPILER_ = "@CMAKE_C_COMPILER@";
+static constexpr std::string_view _CMAKE_CXX_COMPILER_ = "@CMAKE_CXX_COMPILER@";
+
+
+// clang-format off
+static constexpr std::string_view TZ = "@TZ@";
+// clang-format on
+
+
+#define _C_COMPILER_                                                                                                   \
+    ((_CMAKE_C_COMPILER_.find("clang") != std::string::npos) ? "clang"                                                 \
+     : (_CMAKE_C_COMPILER_.find("gcc") != std::string::npos) ? "gcc"                                                   \
+                                                             : "unknown")
+
+#define _CXX_COMPILER_                                                                                                 \
+    ((_CMAKE_CXX_COMPILER_.find("clang") != std::string::npos) ? "clang"                                               \
+     : (_CMAKE_CXX_COMPILER_.find("g++") != std::string::npos) ? "g++"                                                 \
+                                                               : "unknown")
+
+
+#define DASSERT(x) (CMAKE_BUILD_TYPE == "Debug" ? assert(x) : void())
+#define RASSERT(x) (CMAKE_BUILD_TYPE == "Release" ? assert(x) : void())
+#define DPRINT(x) (CMAKE_BUILD_TYPE == "Debug" ? printf(x) : void())
+#define RPRINT(x) (CMAKE_BUILD_TYPE == "Release" ? printf(x) : void())
+
+#endif

@@ -1,0 +1,12 @@
+[settings]
+os=Linux
+arch=x86_64
+arch_build=armv8
+build_type=Release
+compiler=clang
+compiler.version=12
+compiler.libcxx=libstdc++
+
+[env]
+CC=/opt/homebrew/opt/llvm@12/bin/clang
+CXX=/opt/homebrew/opt/llvm@12/bin/clang++
